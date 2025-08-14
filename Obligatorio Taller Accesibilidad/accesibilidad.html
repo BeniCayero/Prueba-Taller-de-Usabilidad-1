@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Accesible | Accesibilidad</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="css/estilos.css" />
+
+
+
+  <script defer src="js/buscador.js"></script>
+
+  <script defer>
+    function ordenarLista() {
+      const lista = document.getElementById("catalogo-juegos");
+      const items = Array.from(lista.querySelectorAll("li"));
+      const tipo = document.getElementById("ordenar-select").value;
+
+
+      items.sort((a, b) => {
+        return tipo === "asc"
+          ? a.dataset.nombre.localeCompare(b.dataset.nombre)
+          : b.dataset.nombre.localeCompare(a.dataset.nombre);
+      });
+
+
+      lista.innerHTML = "";
+      items.forEach((item) => lista.appendChild(item));
+    }
+  </script>
+</head>
+<body>
+
+
+  <nav id="menu" aria-label="Menú principal">
+    <ul>
+      <li><a href="home.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="consolas.html">Consolas y Periféricos</a></li>
+      <li><a href="comunidad.html">Comunidad</a></li>
+      <li><a href="foro.html">Foro de ayuda</a></li>
+      <li><a href="accesibilidad.html" class="activo">Accesibilidad</a></li>
+    </ul>
+  </nav>
+
+
+  <main class="container" style="margin-top: 130px;">
+    <h1 class="text-center mb-4">Buscador de Videojuegos Accesibles</h1>
+    <p class="text-center mb-4">Encontrá videojuegos según su nombre o el tipo de accesibilidad que ofrecen.</p>
+
+
+    <div class="mb-4 text-center">
+      <input
+        type="text"
+        id="input-busqueda"
+        class="form-control w-75 mx-auto"
+        placeholder="Ej: The Last of Us, visual, auditiva, etc"
+        oninput="FiltrarJuegos()"
+        aria-label="Buscador de videojuegos"
+      >
+    </div>
+
+
+    <div class="mb-5 text-center">
+      <label for="ordenar-select" class="form-label">Ordenar por nombre:</label>
+      <select id="ordenar-select" class="form-select w-50 mx-auto" onchange="ordenarLista()">
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
+      </select>
+    </div>
+
+
+    <ul id="catalogo-juegos" class="d-grid gap-4 list-unstyled" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); display: grid;">
+
+
+        <li data-nombre="The Last of Us Part II">
+        <div class="card h-100">
+          <img src="imagenes/lastofus.jpg" class="card-img-top" alt="Portada de The Last of Us">
+          <div class="card-body">
+            <h5 class="card-title">The Last of Us Part II</h5>
+            <p class="card-text">Opciones visuales, auditivas y motrices. Ideal para una experiencia inclusiva total.</p>
+            <span class="badge bg-info text-dark">Multisensorial</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="Forza Horizon 5">
+        <div class="card h-100">
+          <img src="imagenes/forza.jpg" class="card-img-top" alt="Captura de Forza Horizon 5">
+          <div class="card-body">
+            <h5 class="card-title">Forza Horizon 5</h5>
+            <p class="card-text">Narración de menús, subtítulos dinámicos y lenguaje de señas.</p>
+            <span class="badge bg-warning text-dark">Auditiva</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="Minecraft">
+        <div class="card h-100">
+          <img src="imagenes/minecraft.jpg" class="card-img-top" alt="Imagen de Minecraft">
+          <div class="card-body">
+            <h5 class="card-title">Minecraft</h5>
+            <p class="card-text">Compatible con controles adaptativos. Accesibilidad motriz total.</p>
+            <span class="badge bg-success">Motriz</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="Celeste">
+        <div class="card h-100">
+          <img src="imagenes/celeste.jpg" class="card-img-top" alt="Arte pixelado del juego Celeste">
+          <div class="card-body">
+            <h5 class="card-title">Celeste</h5>
+            <p class="card-text">Incluye asistencias personalizables para facilitar el juego sin perder la experiencia.</p>
+            <span class="badge bg-success">Motriz</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="Assassin's Creed Valhalla">
+        <div class="card h-100">
+          <img src="imagenes/valhalla.jpg" class="card-img-top" alt="Portada de Assassin's Creed Valhalla">
+          <div class="card-body">
+            <h5 class="card-title">AC Valhalla</h5>
+            <p class="card-text">Modos de daltonismo, subtítulos, menú narrado y ayudas visuales.</p>
+            <span class="badge bg-info text-dark">Visual</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="The Vale: Shadow of the Crown">
+        <div class="card h-100">
+          <img src="imagenes/thevale.jpg" class="card-img-top" alt="Logo del juego The Vale">
+          <div class="card-body">
+            <h5 class="card-title">The Vale</h5>
+            <p class="card-text">Diseñado para jugarse completamente sin visión, solo con sonido.</p>
+            <span class="badge bg-dark">Visual</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="Gears 5">
+        <div class="card h-100">
+          <img src="imagenes/gears5.jpg" class="card-img-top" alt="Personajes de Gears 5 en acción">
+          <div class="card-body">
+            <h5 class="card-title">Gears 5</h5>
+            <p class="card-text">Narrador de menús, subtítulos personalizables y control adaptable.</p>
+            <span class="badge bg-primary">Multisensorial</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="Grounded">
+        <div class="card h-100">
+          <img src="imagenes/grounded.jpg" class="card-img-top" alt="Escena del juego Grounded con insectos gigantes">
+          <div class="card-body">
+            <h5 class="card-title">Grounded</h5>
+            <p class="card-text">Modo para aracnofobia, HUD ajustable, subtítulos y más.</p>
+            <span class="badge bg-warning text-dark">Auditiva</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="Sea of Thieves">
+        <div class="card h-100">
+          <img src="imagenes/seaofthieves.jpg" class="card-img-top" alt="Barcos y mar en Sea of Thieves">
+          <div class="card-body">
+            <h5 class="card-title">Sea of Thieves</h5>
+            <p class="card-text">Soporte de texto a voz y voz a texto en tiempo real durante el juego.</p>
+            <span class="badge bg-success">Motriz</span>
+          </div>
+        </div>
+      </li>
+
+
+      <li data-nombre="Ratchet and Clank: Rift Apart">
+        <div class="card h-100">
+          <img src="imagenes/ratchet.jpg" class="card-img-top" alt="Ratchet y Clank en una escena futurista">
+          <div class="card-body">
+            <h5 class="card-title">Ratchet & Clank: Rift Apart</h5>
+            <p class="card-text">Incluye alto contraste, navegación asistida, apuntado automático y más.</p>
+            <span class="badge bg-info text-dark">Visual</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+
+   <!-- Tabla 1 -->
+<section class="tabla mt-5" aria-labelledby="titulo-tabla-pautas">
+  <div class="container">
+    <h2 id="titulo-tabla-pautas">Pautas de accesibilidad aplicadas</h2>
+    <table class="accesible-table" aria-describedby="titulo-tabla-pautas">
+      <caption>Tabla 1: Accesibilidad aplicada por sección del sitio</caption>
+      <thead>
+        <tr>
+          <th data-bs-toggle="tooltip" title="Sección del sitio">Sección</th>
+          <th data-bs-toggle="tooltip" title="Elemento aplicado">Elemento</th>
+          <th data-bs-toggle="tooltip" title="Pauta WCAG correspondiente">Pauta WCAG</th>
+          <th data-bs-toggle="tooltip" title="Tipo de accesibilidad">Tipo de accesibilidad</th>
+          <th data-bs-toggle="tooltip" title="Descripción de la implementación">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-bs-toggle="tooltip" title="Inicio">Inicio</td>
+          <td data-bs-toggle="tooltip" title="Imágenes con alt">Imágenes con alt</td>
+          <td data-bs-toggle="tooltip" title="1.1.1 - Texto Alternativo">1.1.1 - Texto Alternativo</td>
+          <td data-bs-toggle="tooltip" title="Visual">Visual</td>
+          <td data-bs-toggle="tooltip" title="Se añadieron descripciones ALT en imágenes decorativas e informativas.">Se añadieron descripciones ALT en imágenes decorativas e informativas.</td>
+        </tr>
+        <tr>
+          <td data-bs-toggle="tooltip" title="Comunidad">Comunidad</td>
+          <td data-bs-toggle="tooltip" title="Mapa interactivo">Mapa interactivo</td>
+          <td data-bs-toggle="tooltip" title="1.4.1 - Uso del color">1.4.1 - Uso del color</td>
+          <td data-bs-toggle="tooltip" title="Visual">Visual</td>
+          <td data-bs-toggle="tooltip" title="El mapa incluye íconos visibles y texto alternativo para cada punto de encuentro.">El mapa incluye íconos visibles y texto alternativo para cada punto de encuentro.</td>
+        </tr>
+        <tr>
+          <td data-bs-toggle="tooltip" title="Foro">Foro</td>
+          <td data-bs-toggle="tooltip" title="Formulario">Formulario</td>
+          <td data-bs-toggle="tooltip" title="3.3.1 - Identificación de errores">3.3.1 - Identificación de errores</td>
+          <td data-bs-toggle="tooltip" title="Cognitiva">Cognitiva</td>
+          <td data-bs-toggle="tooltip" title="Validación en frontend para evitar errores de ingreso.">Validación en frontend para evitar errores de ingreso.</td>
+        </tr>
+        <tr>
+          <td data-bs-toggle="tooltip" title="Accesibilidad">Accesibilidad</td>
+          <td data-bs-toggle="tooltip" title="Buscador interactivo">Buscador interactivo</td>
+          <td data-bs-toggle="tooltip" title="2.1.1 - Acceso con teclado">2.1.1 - Acceso con teclado</td>
+          <td data-bs-toggle="tooltip" title="Motriz">Motriz</td>
+          <td data-bs-toggle="tooltip" title="El input puede usarse con teclado sin necesidad de mouse.">El input puede usarse con teclado sin necesidad de mouse.</td>
+        </tr>
+        <tr>
+          <td data-bs-toggle="tooltip" title="Menú">Menú</td>
+          <td data-bs-toggle="tooltip" title="Navegación con aria-label">Navegación con aria-label</td>
+          <td data-bs-toggle="tooltip" title="1.3.1 - Información y relaciones">1.3.1 - Información y relaciones</td>
+          <td data-bs-toggle="tooltip" title="Visual">Visual</td>
+          <td data-bs-toggle="tooltip" title="El menú tiene etiquetas ARIA para mejorar la navegación con lector de pantalla.">El menú tiene etiquetas ARIA para mejorar la navegación con lector de pantalla.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Tabla 2 -->
+<section class="tabla mt-5" aria-labelledby="titulo-comparativa">
+  <div class="container">
+    <h2 id="titulo-comparativa" class="mb-4">Comparativa de Accesibilidad por Consola</h2>
+    <p class="mb-3">Esta tabla muestra un análisis detallado de las funciones de accesibilidad disponibles en las consolas más populares.</p>
+
+    <div class="table-responsive">
+      <table class="accesible-table" aria-describedby="titulo-comparativa">
+        <caption>Tabla 2: Comparativa de accesibilidad por consola</caption>
+        <thead>
+          <tr>
+            <th data-bs-toggle="tooltip" title="Consola">Consola</th>
+            <th data-bs-toggle="tooltip" title="Subtítulos disponibles">Subtítulos</th>
+            <th data-bs-toggle="tooltip" title="Control adaptado">Control Adaptado</th>
+            <th data-bs-toggle="tooltip" title="Compatibilidad con lector de pantalla">Lector de Pantalla</th>
+            <th data-bs-toggle="tooltip" title="Modo alto contraste disponible">Alto Contraste</th>
+            <th data-bs-toggle="tooltip" title="Personalización de botones">Personalización de Botones</th>
+            <th data-bs-toggle="tooltip" title="Accesibilidad visual">Accesibilidad Visual</th>
+            <th data-bs-toggle="tooltip" title="Accesibilidad auditiva">Accesibilidad Auditiva</th>
+            <th data-bs-toggle="tooltip" title="Accesibilidad motriz">Accesibilidad Motriz</th>
+            <th data-bs-toggle="tooltip" title="Otros elementos de accesibilidad">Otros</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-bs-toggle="tooltip" title="Xbox Series X|S">Xbox Series X|S</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Xbox Adaptive Controller">Xbox Adaptive Controller</td>
+            <td data-bs-toggle="tooltip" title="Limitado">Limitado</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Alta">Alta</td>
+            <td data-bs-toggle="tooltip" title="Media">Media</td>
+            <td data-bs-toggle="tooltip" title="Alta">Alta</td>
+            <td data-bs-toggle="tooltip" title="Soporte TTS, Narrador, Co-Pilot">Soporte TTS, Narrador, Co-Pilot</td>
+          </tr>
+          <tr>
+            <td data-bs-toggle="tooltip" title="PlayStation 5">PlayStation 5</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Limitado">Limitado</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Alta">Alta</td>
+            <td data-bs-toggle="tooltip" title="Alta">Alta</td>
+            <td data-bs-toggle="tooltip" title="Media">Media</td>
+            <td data-bs-toggle="tooltip" title="Audio 3D, Zoom, Lectura de pantalla">Audio 3D, Zoom, Lectura de pantalla</td>
+          </tr>
+          <tr>
+            <td data-bs-toggle="tooltip" title="Nintendo Switch">Nintendo Switch</td>
+            <td data-bs-toggle="tooltip" title="Limitado">Limitado</td>
+            <td data-bs-toggle="tooltip" title="No oficial">No oficial</td>
+            <td data-bs-toggle="tooltip" title="No">No</td>
+            <td data-bs-toggle="tooltip" title="No">No</td>
+            <td data-bs-toggle="tooltip" title="Parcial">Parcial</td>
+            <td data-bs-toggle="tooltip" title="Baja">Baja</td>
+            <td data-bs-toggle="tooltip" title="Baja">Baja</td>
+            <td data-bs-toggle="tooltip" title="Media">Media</td>
+            <td data-bs-toggle="tooltip" title="Depende del juego">Depende del juego</td>
+          </tr>
+          <tr>
+            <td data-bs-toggle="tooltip" title="Steam Deck">Steam Deck</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Compatibilidad Alta">Compatibilidad Alta</td>
+            <td data-bs-toggle="tooltip" title="Limitado">Limitado</td>
+            <td data-bs-toggle="tooltip" title="Parcial">Parcial</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Media">Media</td>
+            <td data-bs-toggle="tooltip" title="Media">Media</td>
+            <td data-bs-toggle="tooltip" title="Alta">Alta</td>
+            <td data-bs-toggle="tooltip" title="Compatible con lector de pantalla Linux">Compatible con lector de pantalla Linux</td>
+          </tr>
+          <tr>
+            <td data-bs-toggle="tooltip" title="PC (Windows)">PC (Windows)</td>
+            <td data-bs-toggle="tooltip" title="Depende del juego">Depende del juego</td>
+            <td data-bs-toggle="tooltip" title="Compatibilidad total">Compatibilidad total</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Sí">Sí</td>
+            <td data-bs-toggle="tooltip" title="Alta">Alta</td>
+            <td data-bs-toggle="tooltip" title="Alta">Alta</td>
+            <td data-bs-toggle="tooltip" title="Alta">Alta</td>
+            <td data-bs-toggle="tooltip" title="Soporta hardware y software externos">Soporta hardware y software externos</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  });
+</script>
+</main>
+
+  <footer class="text-center mt-5">
+    <p>&copy; 2025 Level-Up Accesible. Todos los derechos reservados.</p>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

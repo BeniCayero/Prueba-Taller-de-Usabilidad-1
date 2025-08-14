@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Accesible | Noticias</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="css/estilos.css" />
+
+  <script defer src="js/buscador.js"></script>
+</head>
+<body>
+
+  <nav id="menu" aria-label="Menú principal">
+    <ul>
+      <li><a href="home.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="consolas.html">Consolas y Periféricos</a></li>
+      <li><a href="comunidad.html">Comunidad</a></li>
+      <li><a href="foro.html">Foro de ayuda</a></li>
+      <li><a href="accesibilidad.html">Accesibilidad</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido" tabindex="-1" class="container" style="margin-top: 100px;">
+    <h1 id="titulo-principal" class="mb-4">Últimas Noticias accesibles</h1>
+    <h2 id="titulo-secundario" class="mb-4"> Noticias Destacadas</h2>
+
+
+    <section class="row g-4 justify-content-center" aria-label="Noticias de juegos accesibles">
+
+      <!-- Artículo 1 -->
+      <article class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card h-100">
+          <img src="imagenes/lastofus.jpg" class="card-img-top" alt="Personajes de The Last of Us Parte II">
+          <div class="card-body">
+            <h2 class="card-title h5">The Last of Us Part II: Accesibilidad revolucionaria</h2>
+            <p class="card-text">El aclamado juego de Naughty Dog incluye más de 60 opciones de accesibilidad visual, auditiva y motriz.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#infoLastOfUs" aria-expanded="false" aria-controls="infoLastOfUs">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="infoLastOfUs">
+              <p class="card-text">
+                Entre las opciones se encuentran la asistencia de apuntado, navegación guiada por audio, modos de alto contraste, subtítulos personalizables, lectura automática del texto y muchas funciones más pensadas para garantizar que todos los jugadores puedan disfrutar la experiencia completa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artículo 2 -->
+      <article class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card h-100">
+          <img src="imagenes/forza.jpg" class="card-img-top" alt="Captura de Forza Horizon 5">
+          <div class="card-body">
+            <h2 class="card-title h5">Forza Horizon 5: Conducción inclusiva</h2>
+            <p class="card-text">El juego de carreras incorpora ayudas visuales, narración de menús y traducción en lengua de señas.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForza" aria-expanded="false" aria-controls="collapseForza">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="collapseForza">
+              <p class="card-text">
+                Forza Horizon 5 ofrece navegación por voz, ayudas auditivas, lenguaje de señas integrado y personalización completa de accesibilidad visual para personas con baja visión o daltonismo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artículo 3 -->
+      <article class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card h-100">
+          <img src="imagenes/PlayStation 5.jpg" class="card-img-top" alt="Imagen de la PlayStation 5">
+          <div class="card-body">
+            <h2 class="card-title h5">PS5: nueva actualización de audio accesible</h2>
+            <p class="card-text">El 24 de abril de 2025, PS5 recibió una actualización de sistema que incluye una función de enfoque de audio.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePS5" aria-expanded="false" aria-controls="collapsePS5">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="collapsePS5">
+              <p class="card-text">
+                Ofrece múltiples preajustes y niveles de intensidad para mejorar la comprensión auditiva en partidas, especialmente útil para personas con limitaciones auditivas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+
+
+<section class="tabla mt-5" aria-labelledby="titulo-noticias-accesibles">
+  <div class="container">
+    <h2 id="titulo-noticias-accesibles" class="mb-4">Últimas Noticias de Juegos Accesibles</h2>
+    <p class="mb-3">Noticias recientes sobre avances y novedades en accesibilidad para videojuegos.</p>
+
+    <div class="table-responsive">
+      <table class="table table-dark table-striped table-bordered align-middle text-center">
+        <thead class="table-primary text-dark">
+          <tr>
+            <th>Título de la Noticia</th>
+            <th>Fecha</th>
+            <th>Resumen</th>
+            <th>Fuente / Enlace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Xbox Adaptive Controller mejora con nuevas funciones</td>
+            <td>15/07/2025</td>
+            <td>Microsoft lanza actualizaciones que amplían la compatibilidad y personalización del controlador adaptado.</td>
+            <td><a href="https://news.xbox.com/en-us/2025/07/15/adaptive-controller-update" target="_blank" rel="noopener noreferrer">Xbox News</a></td>
+          </tr>
+          <tr>
+            <td>Forza Horizon 6 integra lenguaje de señas</td>
+            <td>02/06/2025</td>
+            <td>El juego de carreras incluye interpretación en lengua de señas para todos los diálogos.</td>
+            <td><a href="https://forzamotorsport.net/news/forza-horizon-6-accessibility" target="_blank" rel="noopener noreferrer">Forza Official</a></td>
+          </tr>
+          <tr>
+            <td>PS5 añade modo de alto contraste en la última actualización</td>
+            <td>24/04/2025</td>
+            <td>Mejoras visuales para jugadores con baja visión en la consola de Sony.</td>
+            <td><a href="https://blog.playstation.com/2025/04/24/accessibility-update" target="_blank" rel="noopener noreferrer">PlayStation Blog</a></td>
+          </tr>
+          <tr>
+            <td>Steam Deck mejora soporte para lectores de pantalla</td>
+            <td>10/05/2025</td>
+            <td>Valve actualiza la portátil para facilitar la navegación a jugadores con discapacidades visuales.</td>
+            <td><a href="https://store.steampowered.com/news/accessibility" target="_blank" rel="noopener noreferrer">Steam News</a></td>
+          </tr>
+          <tr>
+            <td>Nintendo Switch añade opciones de accesibilidad para motricidad fina</td>
+            <td>05/03/2025</td>
+            <td>Introducción de controles personalizados y ayudas para jugadores con dificultades motrices.</td>
+            <td><a href="https://www.nintendo.com/accessibility" target="_blank" rel="noopener noreferrer">Nintendo Official</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+  </main>
+
+  <footer class="text-center mt-4">
+    <p>&copy; 2025 Level-Up Accesible. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
